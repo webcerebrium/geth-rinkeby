@@ -1,0 +1,15 @@
+{
+  "name": "geth-rinkeby",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "build": "docker build --tag wcrbrm/geth-rinkeby .",
+     "start": "docker run -d --net=host -v /rinkeby:/root/.rinkeby wcrbrm/geth-rinkeby",
+     "init": "docker run -v /host wcrbrm/geth-rinkeby cp -r /root/.rinkeby /host/rinkeby",
+     "all": "npm-run-all build init start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
